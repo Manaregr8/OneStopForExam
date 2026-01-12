@@ -1,66 +1,78 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import type { Metadata } from "next";
 
-export default function Home() {
+import { getDomains, getTopExams, getUpcomingExams } from "@/lib/data/exams";
+import { absoluteUrl, SITE_NAME } from "@/lib/site";
+import { faqJsonLd } from "@/lib/seo/schema";
+
+import {
+  HomeCollegesSoon,
+  HomeDomains,
+  HomeFaq,
+  type HomeFaqItem,
+  HomeHero,
+  HomeResources,
+  HomeSeoBlock,
+  HomeTopExams,
+  HomeTrust,
+  HomeUpcomingExams,
+} from "@/components/home";
+
+export const metadata: Metadata = {
+  title: "One Platform. Every Exam in India.",
+  description:
+    "One-stop solution for every exam in India — explore eligibility, syllabus, exam pattern, preparation strategy, and PYQs across Engineering, Medical, Government, Banking, Law, Defence, Teaching and more.",
+  alternates: { canonical: absoluteUrl("/") },
+};
+
+export default async function Home() {
+  const [domains, topExams, upcomingExams] = await Promise.all([
+    getDomains(),
+    getTopExams(12),
+    getUpcomingExams(12),
+  ]);
+
+  const faqItems: HomeFaqItem[] = [
+    {
+      question: `What is ${SITE_NAME}?`,
+      answer:
+        `${SITE_NAME} is an exam-first knowledge platform built for Indian competitive exams. It focuses on verified, structured information like eligibility, syllabus, exam pattern, preparation strategy, and previous year question papers (PYQs).`,
+    },
+    {
+      question: "How do I use this site for preparation?",
+      answer:
+        "Start from your exam page. Use the syllabus to create a topic checklist, confirm the exam pattern for time allocation, then follow the preparation guide for mock test cycles. Use PYQs to validate high-weightage topics and improve accuracy.",
+    },
+    {
+      question: "Is the information updated for the current year?",
+      answer:
+        "Yes. Each exam section is maintained with an update-first workflow. When official notifications change, we update the relevant section and reflect the last updated timestamp on the page.",
+    },
+    {
+      question: "Do you provide college information?",
+      answer:
+        "A Colleges module is coming soon. This release is focused purely on exams — because aspirants need exam clarity before anything else.",
+    },
+  ];
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd(faqItems)) }}
+      />
+
+      <HomeHero />
+
+      <div className="container">
+        <HomeDomains domains={domains} />
+        <HomeTopExams exams={topExams} />
+        <HomeUpcomingExams exams={upcomingExams} />
+        <HomeTrust />
+        <HomeResources />
+        <HomeCollegesSoon />
+        <HomeSeoBlock />
+        <HomeFaq items={faqItems} />
+      </div>
+    </>
   );
 }

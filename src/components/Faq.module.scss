@@ -1,0 +1,33 @@
+.wrap {
+  margin-top: 26px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--card) 82%, transparent);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.title {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.item {
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+
+.item:first-child {
+  border-top: none;
+}
+
+.q {
+  font-weight: 750;
+  margin: 0 0 6px;
+}
+
+.a {
+  margin: 0;
+  color: var(--muted);
+}

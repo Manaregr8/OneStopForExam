@@ -1,0 +1,42 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 80%, transparent);
+  color: var(--text);
+  padding: 9px 12px;
+  font-weight: 650;
+  font-size: 13px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow);
+}
+
+.pill {
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary) 85%, transparent),
+    color-mix(in srgb, var(--accent) 65%, transparent)
+  );
+  color: var(--primary-contrast);
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 750;
+}

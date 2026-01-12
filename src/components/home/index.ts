@@ -1,0 +1,10 @@
+export { HomeHero } from "@/components/home/HomeHero";
+export { HomeDomains } from "@/components/home/HomeDomains";
+export { HomeTopExams } from "@/components/home/HomeTopExams";
+export { HomeUpcomingExams } from "@/components/home/HomeUpcomingExams";
+export { HomeTrust } from "@/components/home/HomeTrust";
+export { HomeResources } from "@/components/home/HomeResources";
+export { HomeCollegesSoon } from "@/components/home/HomeCollegesSoon";
+export { HomeSeoBlock } from "@/components/home/HomeSeoBlock";
+export { HomeFaq } from "@/components/home/HomeFaq";
+export type { HomeFaqItem } from "@/components/home/HomeFaq";

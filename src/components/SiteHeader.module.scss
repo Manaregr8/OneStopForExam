@@ -1,0 +1,131 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 10px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brandName {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.brandTagline {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--text);
+  font-weight: 650;
+  font-size: 14px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.nav a:hover {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  color: var(--text);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.menuButton:hover {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  transform: translateY(-1px);
+}
+
+.mobileNav {
+  display: none;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+}
+
+.mobileNavOpen {
+  display: block;
+}
+
+.mobileNavInner {
+  padding: 12px 0 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.mobileLink {
+  display: block;
+  padding: 14px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  color: var(--text);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.mobileLink:hover {
+  background: color-mix(in srgb, var(--surface) 95%, transparent);
+}
+
+@media (max-width: 760px) {
+  .inner {
+    padding: 12px 10px;
+  }
+
+  .brandTagline {
+    display: none;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+}

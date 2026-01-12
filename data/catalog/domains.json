@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Engineering",
+    "slug": "engineering",
+    "description": "Engineering entrance exams for B.Tech/B.E. and related programs."
+  },
+  {
+    "name": "Medical",
+    "slug": "medical",
+    "description": "Medical entrance exams for MBBS/BDS and allied health programs."
+  },
+  {
+    "name": "Management",
+    "slug": "management",
+    "description": "MBA and management entrance exams."
+  },
+  {
+    "name": "Government",
+    "slug": "government",
+    "description": "Government recruitment and civil services examinations."
+  },
+  {
+    "name": "Banking",
+    "slug": "banking",
+    "description": "Banking recruitment exams by IBPS, SBI and others."
+  },
+  {
+    "name": "Insurance",
+    "slug": "insurance",
+    "description": "Insurance recruitment exams (e.g., LIC AAO, NIACL AO)."
+  },
+  {
+    "name": "Railways",
+    "slug": "railways",
+    "description": "Railway recruitment exams (RRB NTPC, Group D, etc.)."
+  },
+  {
+    "name": "Defence",
+    "slug": "defence",
+    "description": "Defence recruitment and officer entry examinations."
+  },
+  {
+    "name": "Law",
+    "slug": "law",
+    "description": "Law entrance exams for UG and PG law admissions."
+  },
+  {
+    "name": "Judiciary",
+    "slug": "judiciary",
+    "description": "Judicial services exams (PCS-J and state judiciary)."
+  },
+  {
+    "name": "Teaching",
+    "slug": "teaching",
+    "description": "Teaching eligibility and recruitment exams."
+  },
+  {
+    "name": "SSC",
+    "slug": "ssc",
+    "description": "SSC exams like CGL, CHSL, MTS, GD, etc."
+  },
+  {
+    "name": "State PSC",
+    "slug": "state-psc",
+    "description": "State public service commission exams (e.g., UPPSC, BPSC, MPSC)."
+  },
+  {
+    "name": "UG Admissions",
+    "slug": "ug-admissions",
+    "description": "UG entrance exams including CUET UG and other university admissions."
+  },
+  {
+    "name": "PG Admissions",
+    "slug": "pg-admissions",
+    "description": "PG entrance exams including CUET PG and other university admissions."
+  },
+  {
+    "name": "Commerce & Finance",
+    "slug": "commerce-finance",
+    "description": "Commerce/finance admissions and professional qualification exams."
+  },
+  {
+    "name": "Design",
+    "slug": "design",
+    "description": "Design entrance exams (NID DAT, UCEED, NIFT, etc.)."
+  },
+  {
+    "name": "Architecture",
+    "slug": "architecture",
+    "description": "Architecture and planning entrance exams (NATA, etc.)."
+  },
+  {
+    "name": "Agriculture",
+    "slug": "agriculture",
+    "description": "Agriculture admission and recruitment exams."
+  },
+  {
+    "name": "Science",
+    "slug": "science",
+    "description": "Science and research-related entrances (IIT JAM, GATE, CSIR-NET, etc.)."
+  },
+  {
+    "name": "IT & Computer",
+    "slug": "it-computer",
+    "description": "IT/computer-focused entrance/recruitment exams."
+  }
+]

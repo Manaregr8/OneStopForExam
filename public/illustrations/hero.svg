@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" fill="none" role="img" aria-label="Exam preparation dashboard illustration">
+  <defs>
+    <linearGradient id="g1" x1="90" y1="80" x2="760" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB" stop-opacity="0.95"/>
+      <stop offset="0.55" stop-color="#7C3AED" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="140" y1="140" x2="720" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.72"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="200%" height="200%">
+      <feDropShadow dx="0" dy="14" stdDeviation="22" flood-color="#020617" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Background blob -->
+  <path d="M188 118C256 44 386 18 496 42c116 25 194 108 227 208 33 101 23 230-58 298-79 66-205 61-327 40-122-21-244-60-295-158-52-98-12-242 72-330Z" fill="url(#g1)" opacity="0.32"/>
+
+  <!-- Main card -->
+  <g filter="url(#shadow)">
+    <rect x="140" y="120" width="620" height="420" rx="28" fill="url(#g2)"/>
+    <rect x="140" y="120" width="620" height="420" rx="28" stroke="#0F172A" stroke-opacity="0.10"/>
+
+    <!-- Header bar -->
+    <rect x="176" y="156" width="548" height="56" rx="18" fill="#0B1220" fill-opacity="0.06"/>
+    <circle cx="202" cy="184" r="8" fill="#2563EB"/>
+    <circle cx="228" cy="184" r="8" fill="#7C3AED"/>
+    <circle cx="254" cy="184" r="8" fill="#60A5FA"/>
+    <rect x="286" y="174" width="240" height="20" rx="10" fill="#0B1220" fill-opacity="0.10"/>
+
+    <!-- Left column: checklist -->
+    <rect x="176" y="238" width="270" height="270" rx="22" fill="#FFFFFF" fill-opacity="0.64" stroke="#0F172A" stroke-opacity="0.08"/>
+    <rect x="200" y="264" width="220" height="14" rx="7" fill="#0B1220" fill-opacity="0.12"/>
+
+    <!-- Items -->
+    <g opacity="0.92">
+      <circle cx="206" cy="310" r="10" fill="#16A34A"/>
+      <path d="M201 310l3 3 7-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="224" y="301" width="186" height="18" rx="9" fill="#0B1220" fill-opacity="0.10"/>
+
+      <circle cx="206" cy="352" r="10" fill="#2563EB"/>
+      <path d="M201 352l3 3 7-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="224" y="343" width="160" height="18" rx="9" fill="#0B1220" fill-opacity="0.10"/>
+
+      <circle cx="206" cy="394" r="10" fill="#7C3AED"/>
+      <path d="M201 394l3 3 7-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="224" y="385" width="178" height="18" rx="9" fill="#0B1220" fill-opacity="0.10"/>
+
+      <circle cx="206" cy="436" r="10" fill="#60A5FA"/>
+      <path d="M201 436l3 3 7-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="224" y="427" width="146" height="18" rx="9" fill="#0B1220" fill-opacity="0.10"/>
+    </g>
+
+    <!-- Right column: chart + cards -->
+    <rect x="470" y="238" width="254" height="146" rx="22" fill="#FFFFFF" fill-opacity="0.64" stroke="#0F172A" stroke-opacity="0.08"/>
+    <path d="M496 350c44-58 74-36 96-76 18-34 46-20 66-50" stroke="#2563EB" stroke-width="5" stroke-linecap="round"/>
+    <path d="M496 350c44-36 72-22 96-52 18-22 44-18 66-36" stroke="#7C3AED" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    <circle cx="496" cy="350" r="6" fill="#2563EB"/>
+    <circle cx="592" cy="274" r="6" fill="#7C3AED"/>
+    <circle cx="658" cy="224" r="6" fill="#60A5FA"/>
+
+    <rect x="470" y="402" width="122" height="106" rx="22" fill="#FFFFFF" fill-opacity="0.64" stroke="#0F172A" stroke-opacity="0.08"/>
+    <rect x="496" y="428" width="72" height="12" rx="6" fill="#0B1220" fill-opacity="0.12"/>
+    <rect x="496" y="452" width="52" height="12" rx="6" fill="#0B1220" fill-opacity="0.10"/>
+    <rect x="496" y="476" width="84" height="12" rx="6" fill="#0B1220" fill-opacity="0.08"/>
+
+    <rect x="602" y="402" width="122" height="106" rx="22" fill="#FFFFFF" fill-opacity="0.64" stroke="#0F172A" stroke-opacity="0.08"/>
+    <rect x="628" y="428" width="72" height="12" rx="6" fill="#0B1220" fill-opacity="0.12"/>
+    <rect x="628" y="452" width="92" height="12" rx="6" fill="#0B1220" fill-opacity="0.10"/>
+    <rect x="628" y="476" width="62" height="12" rx="6" fill="#0B1220" fill-opacity="0.08"/>
+  </g>
+
+  <!-- Floating badge -->
+  <g filter="url(#shadow)">
+    <rect x="88" y="436" width="210" height="78" rx="20" fill="#FFFFFF" fill-opacity="0.86"/>
+    <rect x="88" y="436" width="210" height="78" rx="20" stroke="#0F172A" stroke-opacity="0.10"/>
+    <circle cx="126" cy="475" r="14" fill="#2563EB"/>
+    <path d="M126 467v16M118 475h16" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="152" y="462" width="120" height="12" rx="6" fill="#0B1220" fill-opacity="0.14"/>
+    <rect x="152" y="484" width="96" height="12" rx="6" fill="#0B1220" fill-opacity="0.10"/>
+  </g>
+</svg>

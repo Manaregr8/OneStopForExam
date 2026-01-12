@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="420" viewBox="0 0 640 420" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="40" x2="576" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22C55E" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#06B6D4" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="card" x1="120" y1="110" x2="540" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.90"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.65"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="640" height="420" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect x="40" y="38" width="560" height="344" rx="28" fill="url(#bg)" filter="url(#shadow)"/>
+  <rect x="92" y="92" width="456" height="236" rx="22" fill="url(#card)"/>
+
+  <!-- medical cross -->
+  <g transform="translate(168 210)">
+    <rect x="-18" y="-52" width="36" height="104" rx="12" fill="#0B1220" fill-opacity="0.85"/>
+    <rect x="-52" y="-18" width="104" height="36" rx="12" fill="#0B1220" fill-opacity="0.85"/>
+    <rect x="-10" y="-44" width="20" height="88" rx="10" fill="#FFFFFF" fill-opacity="0.95"/>
+    <rect x="-44" y="-10" width="88" height="20" rx="10" fill="#FFFFFF" fill-opacity="0.95"/>
+  </g>
+
+  <!-- accents -->
+  <path d="M420 150c34 0 62 28 62 62s-28 62-62 62-62-28-62-62 28-62 62-62Z" fill="#0B1220" fill-opacity="0.10"/>
+  <path d="M260 308h260" stroke="#0B1220" stroke-opacity="0.22" stroke-width="10" stroke-linecap="round"/>
+  <path d="M260 276h210" stroke="#0B1220" stroke-opacity="0.18" stroke-width="10" stroke-linecap="round"/>
+  <path d="M260 244h170" stroke="#0B1220" stroke-opacity="0.14" stroke-width="10" stroke-linecap="round"/>
+</svg>

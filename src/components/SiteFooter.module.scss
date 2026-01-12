@@ -1,0 +1,66 @@
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: 46px;
+  padding: 34px 0;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.inner {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.copy {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: var(--muted);
+  font-weight: 650;
+  font-size: 14px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.links a:hover {
+  text-decoration: none;
+  color: var(--text);
+  background: color-mix(in srgb, var(--card) 70%, transparent);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 80%, transparent);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
