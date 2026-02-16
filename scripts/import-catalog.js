@@ -10,6 +10,12 @@ function readJson(relPath) {
   return JSON.parse(fs.readFileSync(abs, "utf8"));
 }
 
+function readJsonOptional(relPath) {
+  const abs = path.join(process.cwd(), relPath);
+  if (!fs.existsSync(abs)) return null;
+  return JSON.parse(fs.readFileSync(abs, "utf8"));
+}
+
 function requireEnv(name) {
   const v = process.env[name];
   if (!v) {
@@ -28,6 +34,7 @@ async function main() {
 
   const domains = readJson("data/catalog/domains.json");
   const exams = readJson("data/catalog/exams.json");
+  const examContent = readJsonOptional("data/catalog/exam-content.json") || {};
 
   console.log(`Loaded ${domains.length} domains, ${exams.length} exams`);
 
@@ -94,6 +101,48 @@ async function main() {
   }
 
   console.log(`Upserted exam_domains mappings: ${pairs.length}`);
+
+  // 4) Upsert exam section content (optional)
+  {
+    const tableBySectionKey = {
+      overview: "exam_overview",
+      eligibility: "eligibility",
+      syllabus: "syllabus",
+      "exam-pattern": "pattern",
+      "how-to-prepare": "preparation",
+      "previous-year-question-papers": "pyq",
+    };
+
+    const rowsByTable = new Map();
+    for (const [slug, sections] of Object.entries(examContent)) {
+      const examId = examIdBySlug.get(slug);
+      if (!examId) {
+        console.warn(`Skipping content: exam not found for slug=${slug}`);
+        continue;
+      }
+
+      for (const [sectionKey, contentMarkdown] of Object.entries(sections || {})) {
+        const table = tableBySectionKey[sectionKey];
+        if (!table) {
+          console.warn(`Skipping content: unknown section=${sectionKey} (exam=${slug})`);
+          continue;
+        }
+        if (typeof contentMarkdown !== "string" || !contentMarkdown.trim()) continue;
+
+        const existing = rowsByTable.get(table) || [];
+        existing.push({ exam_id: examId, content_markdown: contentMarkdown });
+        rowsByTable.set(table, existing);
+      }
+    }
+
+    for (const [table, rows] of rowsByTable.entries()) {
+      if (!rows.length) continue;
+      const { error } = await supabase.from(table).upsert(rows, { onConflict: "exam_id" });
+      if (error) throw error;
+      console.log(`Upserted ${rows.length} rows into ${table}`);
+    }
+  }
+
   console.log("Done.");
 }
 

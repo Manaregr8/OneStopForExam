@@ -4,6 +4,53 @@ import type { Exam } from "@/lib/data/types";
 import type { ExamSectionKey } from "@/lib/data/exams";
 import { absoluteUrl } from "@/lib/site";
 
+type SectionMetaOverride = { title?: string; description?: string };
+
+const EXAM_SECTION_META_OVERRIDES: Record<
+  string,
+  Partial<Record<ExamSectionKey, SectionMetaOverride>>
+> = {
+  "ssc-cgl": {
+    overview: {
+      title: "SSC CGL Exam 2026: Eligibility, Pattern, Syllabus, Prep, PYQs",
+      description:
+        "SSC CGL in one calm place. Understand eligibility, exam stages, syllabus basics, preparation plan, and how to use PYQs without panic.",
+    },
+  },
+  "ssc-chsl": {
+    overview: {
+      title: "SSC CHSL Exam 2026: Eligibility, Pattern, Syllabus, Prep, PYQs",
+      description:
+        "SSC CHSL explained simply and calmly. Eligibility, exam stages, syllabus basics, preparation plan, descriptive writing, and PYQs.",
+    },
+  },
+  "ssc-mts": {
+    overview: {
+      title: "SSC MTS Exam 2026: Eligibility, Pattern, Syllabus, Prep, PYQs",
+      description:
+        "SSC MTS explained with calm clarity. Eligibility, exam pattern, syllabus overview, preparation plan, and PYQ strategy.",
+    },
+  },
+  "ibps-po": {
+    overview: {
+      title: "IBPS PO Exam 2026: Eligibility, Pattern, Syllabus, Mains, Interview",
+      description:
+        "IBPS PO explained like a clear decision. Eligibility, prelims and mains structure, descriptive writing, interview, prep plan, and PYQs.",
+    },
+  },
+  "rrb-ntpc": {
+    overview: {
+      title: "RRB NTPC Exam 2026: Eligibility, Pattern, Posts, Prep, PYQs",
+      description:
+        "RRB NTPC explained calmly. Eligibility, CBT stages, post types, syllabus overview, preparation plan, and PYQ strategy.",
+    },
+  },
+};
+
+function getSectionMetaOverride(examSlug: string, section: ExamSectionKey): SectionMetaOverride {
+  return EXAM_SECTION_META_OVERRIDES[examSlug]?.[section] ?? {};
+}
+
 export function sectionLabel(section: ExamSectionKey): string {
   switch (section) {
     case "overview":
@@ -22,6 +69,9 @@ export function sectionLabel(section: ExamSectionKey): string {
 }
 
 export function examSectionTitle(exam: Exam, section: ExamSectionKey): string {
+  const override = getSectionMetaOverride(exam.slug, section);
+  if (override.title) return override.title;
+
   const year = new Date().getFullYear();
   if (section === "overview") {
     return `${exam.name} ${year} – Eligibility, Syllabus, Exam Pattern, Preparation Tips`;
@@ -30,6 +80,9 @@ export function examSectionTitle(exam: Exam, section: ExamSectionKey): string {
 }
 
 export function examSectionDescription(exam: Exam, section: ExamSectionKey): string {
+  const override = getSectionMetaOverride(exam.slug, section);
+  if (override.description) return override.description;
+
   if (section === "overview") {
     return `Get the latest ${exam.name} details: key dates, eligibility, syllabus, exam pattern, preparation strategy, and previous year question papers. Updated for Indian aspirants.`;
   }

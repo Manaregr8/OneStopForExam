@@ -1066,3 +1066,686 @@ select e.id, 'exam-pattern', 'Is CSAT qualifying in UPSC CSE Prelims?',
 'CSAT is treated as qualifying as per notification rules. Always confirm the latest minimum qualifying marks and conditions from UPSC.', 1
 from public.exams e where e.slug = 'upsc-cse'
 on conflict do nothing;
+
+-- -------------------------
+-- SSC CGL content (client copy)
+-- -------------------------
+insert into public.exam_overview (exam_id, content_markdown)
+select e.id, $$
+# SSC CGL Exam
+
+## Quick Facts
+
+- **Conducting body:** Staff Selection Commission (SSC)
+- **Exam type:** Government recruitment exam for graduates
+- **Level:** Graduation (most posts)
+- **Mode:** Computer Based Test (CBT)
+- **What this site covers:** Eligibility, syllabus, exam pattern, preparation, PYQs
+- **One line reality:** This exam rewards steady basics more than flashy intelligence.
+
+## Overview
+
+SSC CGL feels intimidating mostly because people explain it like a wall of syllabus.
+
+Take a breath.
+
+This exam is simple in nature, competitive in practice.
+
+It recruits for Group B and Group C posts across departments, which means the job roles can differ, but the core selection logic stays the same.
+
+If you are here because you want stability, structure, and a clear ladder ahead, SSC CGL is worth considering.
+
+If you are here only because someone said “government exam de do”, then first understand what life you are signing up for.
+
+## Who this exam is for
+
+- You can study daily with discipline, even if your starting level is average.
+- You want a stable career track and you like clarity over chaos.
+- You can repeat the same basics until they become automatic.
+
+## Who should avoid it
+
+- You hate revision and only study when motivation hits.
+- You want quick results without a long cycle.
+- You get bored of practice and switch plans every week.
+
+## Start here, if you feel confused
+
+1. Read Eligibility, but do not assume. Posts vary.
+2. Read Exam Pattern once. Understand stages and subjects.
+3. Skim Syllabus Snapshot. Mark your weak areas.
+4. Go to How to Prepare and follow the 2-week stabiliser plan.
+$$
+from public.exams e where e.slug = 'ssc-cgl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.eligibility (exam_id, content_markdown)
+select e.id, $$
+# SSC CGL Eligibility
+
+## At a glance
+
+- **Education:** Bachelor’s degree (most posts accept any stream)
+- **Age limit:** Varies by post (commonly within 18 to 32 years range)
+- **Relaxation:** Applicable as per government rules and categories
+
+## Calm clarity before details
+
+Many students waste months because they assume eligibility and later realise a post needs a specific condition.
+
+Do not do that.
+
+SSC CGL eligibility is not one single rule. It is post-wise.
+
+## What to verify from the notification before you commit
+
+- Post-wise age limit
+- Post-wise educational requirement
+- Nationality rules
+- Category relaxation rules
+- Document checklist
+
+## Common confusion
+
+If two people say two different age limits, both can still be correct.
+
+SSC CGL has different posts, and those posts have different age brackets.
+$$
+from public.exams e where e.slug = 'ssc-cgl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pattern (exam_id, content_markdown)
+select e.id, $$
+# SSC CGL Exam Pattern
+
+## One simple way to understand it
+
+- Stage 1 checks speed plus basics.
+- Stage 2 checks depth plus accuracy.
+
+## What usually gets tested
+
+- Reasoning and general intelligence
+- Quantitative aptitude
+- English comprehension
+- General awareness
+
+## A small reassurance
+
+You do not need to be brilliant at everything on Day 1.
+
+You need a stable plan that makes your weak areas quieter every week.
+$$
+from public.exams e where e.slug = 'ssc-cgl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.syllabus (exam_id, content_markdown)
+select e.id, $$
+# SSC CGL Syllabus
+
+This page is not here to overwhelm you.
+
+This page is here to help you prioritise.
+
+## Core areas
+
+- **Quant:** arithmetic, algebra basics, higher topics as per level
+- **Reasoning:** verbal and non-verbal patterns
+- **English:** grammar, comprehension, vocabulary
+- **GA:** static GK and current awareness basics
+
+## Mini rule that saves time
+
+If a topic does not show up in PYQs repeatedly, it does not deserve your emotional energy.
+$$
+from public.exams e where e.slug = 'ssc-cgl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.preparation (exam_id, content_markdown)
+select e.id, $$
+# How to Prepare for SSC CGL
+
+## Truth first
+
+SSC CGL is cleared by people who show up daily, not by people who binge study once in 10 days.
+
+## 2-week stabiliser plan (for overwhelmed students)
+
+### Day 1 to 3: Only basics
+
+- Quant: percentages, ratio, averages
+- Reasoning: basic series, coding-decoding, direction
+- English: grammar base plus 1 comprehension
+- GA: one short list daily
+
+### Day 4 to 10: Timed sets start
+
+- Two timed quant sets
+- Two timed reasoning sets
+- One comprehension daily
+- GA daily short cycle
+- Error-log compulsory
+
+### Day 11 to 14: One mini mock every alternate day
+
+- Mock, then analysis
+- Analysis matters more than score right now
+
+## Study Circle Timing
+
+Aspirants preparing for SSC win through a loop: concepts, timed practice, revision, repeat. A practical cycle is 2 to 3 focused hours for concepts and notes, 1 to 2 hours for timed practice sets, and 30 to 45 minutes for revision plus error-log. Add one full mock weekly and one mid-week revision sprint. This builds recall under pressure, which is the real exam skill.
+$$
+from public.exams e where e.slug = 'ssc-cgl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pyq (exam_id, content_markdown)
+select e.id, $$
+# SSC CGL Previous Year Papers
+
+PYQs are not a torture test.
+
+PYQs are a mirror.
+
+## Use PYQs like this
+
+1. Spot repeated topics
+2. Make a priority list
+3. Solve topic-wise first
+4. Move to full papers later
+5. Track mistakes by topic, not by mood
+
+## If you do only one thing right
+
+Start an error-log.
+
+It will feel boring.
+
+It will also change your score quietly.
+$$
+from public.exams e where e.slug = 'ssc-cgl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+-- -------------------------
+-- SSC CHSL content (client copy)
+-- -------------------------
+insert into public.exam_overview (exam_id, content_markdown)
+select e.id, $$
+# SSC CHSL Exam
+
+## Quick Facts
+
+- **Conducting body:** Staff Selection Commission (SSC)
+- **Level:** 12th pass
+- **Mode:** CBT based stages
+- **Why students choose it:** Early entry into government roles after 12th
+- **Core focus:** Speed, accuracy, consistency
+
+## Overview
+
+SSC CHSL is not “small” just because it is 12th level.
+
+It is competitive because the number of applicants is huge.
+
+This exam is a good choice if you want a stable path early, and you are willing to practise daily.
+
+If you are struggling with direction after 12th, CHSL can become one clean decision.
+
+## Who this exam is for
+
+- You want government work stability.
+- You can practise basics daily without drama.
+- You prefer a structured life over unpredictable career hops.
+
+## Start here if your mind is messy
+
+1. Read Eligibility first.
+2. Then read Exam Pattern once.
+3. Then go to How to Prepare and follow the 2-week stabiliser plan.
+$$
+from public.exams e where e.slug = 'ssc-chsl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.eligibility (exam_id, content_markdown)
+select e.id, $$
+# SSC CHSL Eligibility
+
+## At a glance
+
+- **Education:** 12th standard pass
+- **Age limit:** Commonly 18 to 27 years (notification based)
+- **Relaxation:** As per government rules
+
+## Common confusion
+
+Age limit can differ for different posts. Always check the notification.
+$$
+from public.exams e where e.slug = 'ssc-chsl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pattern (exam_id, content_markdown)
+select e.id, $$
+# SSC CHSL Exam Pattern
+
+## Broad structure
+
+- Objective CBT stage
+- Descriptive writing stage (essay or letter format)
+- Skill or typing test depending on post
+
+## Calm reminder
+
+Writing improves with repetition, not with talent.
+$$
+from public.exams e where e.slug = 'ssc-chsl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.syllabus (exam_id, content_markdown)
+select e.id, $$
+# SSC CHSL Syllabus Snapshot
+
+## Core areas
+
+- Basic quant
+- Reasoning
+- English
+- General awareness
+- Descriptive writing basics
+$$
+from public.exams e where e.slug = 'ssc-chsl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.preparation (exam_id, content_markdown)
+select e.id, $$
+# How to Prepare for SSC CHSL
+
+## 2-week stabiliser plan
+
+### Week 1: Basics plus speed
+
+- Quant and reasoning timed sets daily
+- English daily habit
+- GA daily short cycle
+
+### Week 2: Mock and analysis
+
+- One mini mock every alternate day
+- Analysis must include error-log updates
+
+## Study Circle Timing
+
+Keep 2 hours for practice sets, 45 minutes for GA and notes, 30 minutes for revision, and 30 minutes for English reading or comprehension. Consistency beats intensity here.
+$$
+from public.exams e where e.slug = 'ssc-chsl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pyq (exam_id, content_markdown)
+select e.id, $$
+# SSC CHSL Previous Year Papers (PYQs)
+
+PYQs tell you what the exam actually rewards.
+
+Use them topic-wise first.
+
+Do not chase advanced topics that never appear.
+$$
+from public.exams e where e.slug = 'ssc-chsl'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+-- -------------------------
+-- SSC MTS content (client copy)
+-- -------------------------
+insert into public.exam_overview (exam_id, content_markdown)
+select e.id, $$
+# SSC MTS Exam
+
+## Quick Facts
+
+- **Conducting body:** Staff Selection Commission (SSC)
+- **Level:** 10th pass
+- **Mode:** CBT
+- **Who it suits:** Entry-level government roles
+- **Reality:** Competition is high because eligibility is wide.
+
+## Overview
+
+SSC MTS is about fundamentals.
+
+That is why it is dangerous to underestimate.
+
+Students lose here not because questions are impossible.
+
+They lose because they skip basics, and basics return in the exam like debt.
+
+## Who this exam is for
+
+- You want a stable job and can practise daily.
+- You want to build a career step by step.
+- You can respect revision.
+$$
+from public.exams e where e.slug = 'ssc-mts'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.eligibility (exam_id, content_markdown)
+select e.id, $$
+# SSC MTS Eligibility
+
+## At a glance
+
+- **Education:** 10th pass
+- **Age:** Often within 18 to 25 or 27 range (notification based)
+- **Relaxation:** As per rules
+$$
+from public.exams e where e.slug = 'ssc-mts'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pattern (exam_id, content_markdown)
+select e.id, $$
+# SSC MTS Exam Pattern
+
+CBT based structure.
+
+Focus stays on basics: quant, reasoning, English, general awareness.
+$$
+from public.exams e where e.slug = 'ssc-mts'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.syllabus (exam_id, content_markdown)
+select e.id, $$
+# SSC MTS Syllabus Snapshot
+
+## Core areas
+
+- Arithmetic basics
+- Reasoning basics
+- English basics
+- GA basics
+- Basic science awareness as per level
+$$
+from public.exams e where e.slug = 'ssc-mts'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.preparation (exam_id, content_markdown)
+select e.id, $$
+# How to Prepare for SSC MTS
+
+## 2-week stabiliser plan
+
+- 3 days: rebuild basics
+- Next 7 days: timed practice sets
+- Last 4 days: mini mocks plus error-log
+
+## Study Circle Timing
+
+Two hours timed sets, 45 minutes GA, 30 minutes revision, 30 minutes English. Keep it boring. Boring is what clears exams.
+$$
+from public.exams e where e.slug = 'ssc-mts'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pyq (exam_id, content_markdown)
+select e.id, $$
+# SSC MTS Previous Year Papers (PYQs)
+
+Do not use PYQs only for score.
+
+Use PYQs to understand what repeats, and practise that until it becomes easy.
+$$
+from public.exams e where e.slug = 'ssc-mts'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+-- -------------------------
+-- IBPS PO content (client copy)
+-- -------------------------
+insert into public.exam_overview (exam_id, content_markdown)
+select e.id, $$
+# IBPS PO Exam
+
+## Quick Facts
+
+- **Conducting body:** Institute of Banking Personnel Selection (IBPS)
+- **Role:** Probationary Officer in public sector banks (bank allotment through IBPS)
+- **Education:** Graduation (any discipline for most candidates)
+- **Age:** Commonly 20 to 30 years (relaxation as per rules)
+- **Stages:** Prelims, Mains, Interview
+- **Extra in mains:** Descriptive writing (essay and letter writing)
+
+## Overview
+
+Bank exams can feel like a race.
+
+IBPS PO is more like a controlled sprint.
+
+You do not need to study 12 hours.
+
+You need to train your mind to stay calm under time pressure.
+
+If you enjoy structured work, steady growth, and a defined career ladder, banking can fit you well.
+
+If you hate timed tests, this path will feel heavy unless you fix that weakness early.
+
+## Start here
+
+Read Exam Pattern first. Banking preparation depends on stage structure.
+
+Then read How to Prepare. Use the bank study cycle.
+$$
+from public.exams e where e.slug = 'ibps-po'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.eligibility (exam_id, content_markdown)
+select e.id, $$
+# IBPS PO Eligibility
+
+## At a glance
+
+- **Education:** Graduation (any subject for most candidates)
+- **Age:** Minimum 20 years, maximum 30 years (notification based)
+- **Relaxation:** Category-based as per rules
+
+## Reassurance
+
+You do not need a finance background to start.
+
+You need a daily habit.
+$$
+from public.exams e where e.slug = 'ibps-po'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pattern (exam_id, content_markdown)
+select e.id, $$
+# IBPS PO Exam Pattern
+
+## Phase 1: Prelims (objective)
+
+- Reasoning ability
+- Quantitative aptitude
+- English language
+
+## Phase 2: Mains
+
+- Reasoning and computer aptitude
+- Data analysis and interpretation
+- English language
+- General economy and banking awareness
+- Descriptive test: essay and letter writing
+
+## Phase 3: Interview
+
+- Personal interview
+
+## Common confusion
+
+Prelims is about speed.
+
+Mains is about depth.
+
+Many students prepare like prelims forever and get stuck.
+$$
+from public.exams e where e.slug = 'ibps-po'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.syllabus (exam_id, content_markdown)
+select e.id, $$
+# IBPS PO Syllabus Snapshot
+
+## Core areas
+
+- **English:** comprehension, grammar, vocabulary
+- **Quant:** arithmetic plus data-based questions
+- **Reasoning:** puzzles, seating, logic patterns
+- **Banking awareness:** basic banking plus current awareness
+- **Descriptive:** clean writing format and clarity
+$$
+from public.exams e where e.slug = 'ibps-po'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.preparation (exam_id, content_markdown)
+select e.id, $$
+# How to Prepare for IBPS PO
+
+## Bank study cycle that actually works
+
+- Daily reasoning sets
+- Daily quant sets
+- Daily English reading plus comprehension
+- Daily banking awareness short cycle
+- Mock weekly, analysis compulsory
+
+## 2-week stabiliser plan
+
+### Week 1: speed base
+
+- Sectional tests and error-log
+
+### Week 2: stamina
+
+- Full mock alternate days and deeper analysis
+
+## Study Circle Timing
+
+90 minutes reasoning, 60 minutes quant, 45 minutes English, 30 minutes banking awareness, 20 minutes revision from error-log. Add one mock weekly. This makes you calm under time pressure, which is the real selection skill.
+$$
+from public.exams e where e.slug = 'ibps-po'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pyq (exam_id, content_markdown)
+select e.id, $$
+# IBPS PO Previous Year Papers (PYQs)
+
+Use PYQs to identify question patterns, especially in reasoning and DI.
+
+Do not chase random shortcuts.
+
+Build pattern comfort through repetition.
+$$
+from public.exams e where e.slug = 'ibps-po'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+-- -------------------------
+-- RRB NTPC content (client copy)
+-- -------------------------
+insert into public.exam_overview (exam_id, content_markdown)
+select e.id, $$
+# RRB NTPC Exam
+
+## Quick Facts
+
+- **Conducting body:** Railway Recruitment Board (RRB)
+- **Full form:** Non-Technical Popular Categories (NTPC)
+- **Levels:** Undergraduate and Graduate posts
+- **Work nature:** Administrative and supervisory roles
+- **Stages:** CBT-1, CBT-2, document verification, medical (skill test if required)
+
+## Overview
+
+RRB NTPC attracts students because it offers a stable government career inside the railways ecosystem.
+
+The word “railways” sounds huge, but the exam logic stays simple.
+
+You win with basics, speed, and clean general awareness.
+
+## Start here if you want clarity fast
+
+Eligibility first because posts differ.
+
+Then exam pattern.
+
+Then how to prepare with a railway-focused cycle.
+$$
+from public.exams e where e.slug = 'rrb-ntpc'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.eligibility (exam_id, content_markdown)
+select e.id, $$
+# RRB NTPC Eligibility
+
+## At a glance
+
+- **Education:** 12th pass for some posts, graduation for others
+- **Age:** Varies by post and level
+- **Medical and document verification:** Part of final selection process
+
+## Common confusion
+
+RRB NTPC includes both undergraduate and graduate level posts. That is why eligibility looks inconsistent across sources.
+$$
+from public.exams e where e.slug = 'rrb-ntpc'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pattern (exam_id, content_markdown)
+select e.id, $$
+# RRB NTPC Exam Pattern
+
+- CBT-1
+- CBT-2
+- Skill test where applicable
+- Document verification
+- Medical exam
+$$
+from public.exams e where e.slug = 'rrb-ntpc'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.syllabus (exam_id, content_markdown)
+select e.id, $$
+# RRB NTPC Syllabus Snapshot
+
+## Core areas
+
+- Mathematics
+- General intelligence and reasoning
+- General awareness
+$$
+from public.exams e where e.slug = 'rrb-ntpc'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.preparation (exam_id, content_markdown)
+select e.id, $$
+# How to Prepare for RRB NTPC
+
+## Railway preparation focus
+
+- Timed maths practice sets
+- Reasoning patterns daily
+- GA daily short cycle
+- Mocks weekly, analysis compulsory
+
+## Study Circle Timing
+
+Two hours practice sets, 45 minutes GA notes, 30 minutes revision from error-log. Add one full mock weekly. Railway exams reward repetition with calmness.
+$$
+from public.exams e where e.slug = 'rrb-ntpc'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();
+
+insert into public.pyq (exam_id, content_markdown)
+select e.id, $$
+# RRB NTPC Previous Year Papers (PYQs)
+
+PYQs teach the real style.
+
+Solve topic-wise first.
+
+Then solve full papers in timed mode.
+
+Track mistakes by topic and fix them weekly.
+$$
+from public.exams e where e.slug = 'rrb-ntpc'
+on conflict (exam_id) do update set content_markdown = excluded.content_markdown, updated_at = now();

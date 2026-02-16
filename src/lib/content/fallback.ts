@@ -1,7 +1,21 @@
 import type { Exam } from "@/lib/data/types";
 import type { ExamSectionKey } from "@/lib/data/exams";
 
+import examContent from "@/../data/catalog/exam-content.json";
+
+type ExamContentCatalog = Record<string, Partial<Record<ExamSectionKey, string>>>;
+
+function catalogMarkdown(exam: Exam, section: ExamSectionKey): string | null {
+  const catalog = examContent as unknown as ExamContentCatalog;
+  const byExam = catalog[exam.slug];
+  const md = byExam?.[section];
+  return typeof md === "string" && md.trim() ? md : null;
+}
+
 export function fallbackMarkdown(exam: Exam, section: ExamSectionKey): string {
+  const fromCatalog = catalogMarkdown(exam, section);
+  if (fromCatalog) return fromCatalog;
+
   switch (section) {
     case "overview":
       return `## About ${exam.name}
