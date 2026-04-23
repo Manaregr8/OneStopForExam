@@ -5,6 +5,7 @@ import { absoluteUrl, SITE_NAME } from "@/lib/site";
 import { faqJsonLd } from "@/lib/seo/schema";
 
 import {
+  HomeCareerFields,
   HomeCollegesSoon,
   HomeDomains,
   HomeFaq,
@@ -67,6 +68,7 @@ export default async function Home() {
         <HomeDomains domains={domains} />
         <HomeTopExams exams={topExams} />
         <HomeUpcomingExams exams={upcomingExams} />
+        <HomeCareerFields />
         <HomeTrust />
         <HomeResources />
         <HomeCollegesSoon />

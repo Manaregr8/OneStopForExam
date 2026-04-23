@@ -28,6 +28,7 @@ export function SiteHeader() {
         <nav className={styles.nav} aria-label="Primary">
           <Link href="/exams">Exams</Link>
           <Link href="/domains">Domains</Link>
+          <Link href="/careers">Careers</Link>
           <Link href="/colleges">Colleges (Coming Soon)</Link>
         </nav>
 
@@ -57,6 +58,9 @@ export function SiteHeader() {
           </Link>
           <Link href="/domains" className={styles.mobileLink}>
             Domains
+          </Link>
+          <Link href="/careers" className={styles.mobileLink}>
+            Careers
           </Link>
           <Link href="/colleges" className={styles.mobileLink}>
             Colleges (Coming Soon)

@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { createSupabasePublicClient } from "@/lib/supabase/public";
 import { absoluteUrl } from "@/lib/site";
 import { EXAM_SECTIONS } from "@/lib/data/exams";
+import { CAREER_FIELDS } from "@/lib/data/careers";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -12,6 +13,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: absoluteUrl("/exams"), lastModified: now, priority: 0.9 },
     { url: absoluteUrl("/domains"), lastModified: now, priority: 0.8 },
     { url: absoluteUrl("/colleges"), lastModified: now, priority: 0.2 },
+    { url: absoluteUrl("/careers"), lastModified: now, priority: 0.85 },
+    ...CAREER_FIELDS.map((f) => ({
+      url: absoluteUrl(`/careers/${f.slug}`),
+      lastModified: now,
+      priority: 0.8 as const,
+    })),
   ];
 
   let domains: Array<{ slug: string; updated_at: string | null }> = [];

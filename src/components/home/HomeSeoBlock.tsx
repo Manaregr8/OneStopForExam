@@ -1,5 +1,6 @@
 import styles from "@/app/page.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 export function HomeSeoBlock() {
   return (
@@ -36,6 +37,16 @@ export function HomeSeoBlock() {
             use PYQs to validate which topics repeat and to build accuracy under time pressure. If you
             are switching from one exam to another within the same domain, compare patterns and syllabi
             to reuse preparation efforts effectively.
+          </p>
+          <p>
+            Beyond exams, building a successful career requires choosing the right engineering branch. 
+            Our <Link href="/careers">Career Fields</Link> section provides deep dives into popular B.Tech domains 
+            like <Link href="/careers/computer-science-engineering">Computer Science</Link>, 
+            <Link href="/careers/software-engineering">Software Engineering</Link>, 
+            <Link href="/careers/ai-ml">Artificial Intelligence & Machine Learning</Link>, and 
+            <Link href="/careers/aerospace-engineering">Aerospace Engineering</Link>. 
+            By understanding subjects, salary packages, and top recruiters early on, aspirants can align 
+            their preparation with their long-term professional goals.
           </p>
           <p>
             Aspirants often lose weeks due to scattered information. A reliable portal must be

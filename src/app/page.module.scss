@@ -453,6 +453,35 @@
   box-shadow: var(--shadow);
 }
 
+.careerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.careerCard {
+  display: block;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.careerCard:hover {
+  text-decoration: none;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: var(--border-strong);
+  background: color-mix(in srgb, var(--surface) 20%, var(--card));
+}
+
 .examName {
   display: block;
   font-weight: 800;

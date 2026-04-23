@@ -8,3 +8,4 @@ export { HomeCollegesSoon } from "@/components/home/HomeCollegesSoon";
 export { HomeSeoBlock } from "@/components/home/HomeSeoBlock";
 export { HomeFaq } from "@/components/home/HomeFaq";
 export type { HomeFaqItem } from "@/components/home/HomeFaq";
+export { HomeCareerFields } from "@/components/home/HomeCareerFields";
